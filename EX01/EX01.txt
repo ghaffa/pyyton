@@ -1,0 +1,16 @@
+Paradiisisaar
+
+Oled läinud puhkusele soojale maale. Mõnusat sooja ilma rannas nautides tuli sul suur janu pi?a colada järele. Lähed kohaliku kokteilimeistri juurde, aga ta ütleb, et tal on üks oluline kokteili komponent otsas - kookost ei ole. Ta saadab sind kohalikule turule kookost tooma, et ta saaks sulle joogi teha. Jõudes turule, märkad kookosemüüjat, aga paraku ta kehitab su eurode pakkumise peale lihtsalt õlgu ja suunab banaanimüüja suunas. Pikema uurimise peale hakkad mõistma, et saarel on tegemist naturaalmajandusega, ehk teisisõnu, soojal saarel on kasutusel raha asemel puuviljad. Kohalike abiga jõuad järeldusele, et fruktvaluuta vääringud jagunevad järgmiselt:
+1 kookos = 3 banaani 
+2 banaani = 5 papaiat
+1 papaia = 7 datlit
+Märkad lähedal datlipalmi ja otsustad korjata piisavalt datleid, et välja teenida oma kauaoodatud kokteil. Mitu korda sa pead puuvilju vahetamas käima kui sul on n datlit, et tekiks olukord kus sul on alles ainult kookosed või edasine vahetamine ei vii kookosele lähemale? Arvesta sellega, et iga vahetus läheb arvesse eraldi tehinguna. See tähendab, et 14 datlit vahetatakse kaheks papaiaks kahe tehinguga.
+
+Tehnilised nõuded
+Kogu lahendus peab olema failis EX01.py, mis tuleb panna kataloogi EX01. See tähendab, et fail asub salves kohal EX01/EX01.py.
+Loo funktsioon nimega convert_dates_to_coconuts(count), mis tagastab kokku tehtud vahetuste summa (convert_dates_to_coconuts(count) => mitu vahetust toimus?).
+Näited
+convert_dates_to_coconuts(1) => 0
+convert_dates_to_coconuts(105) => 15 + 3 + 2 = 20 (täpselt jagub, tulemuseks on 2 kookost)
+convert_dates_to_coconuts(110) => 15 + 3 + 2 = 20 (5 datlit jääb üle, neid ei saa vahetada)
+convert_dates_to_coconuts(112) => 16 + 3 + 2 = 21 (7 datlit jääb üle, mis vahetatakse papaiaks)
