@@ -1,0 +1,23 @@
+ITI0140:Ülesanne 2
+Enn Igma
+
+Tudeng Enn kirub sõbraga Facebookis nimetuks jäävat õppejõudu ja tabab end mõtlemast, kuidas oli tema eelkäijate eluolu ülikoolis, kui Facebooki ei olnud. Kuidas küll tudengid õppejõudu kiruda said kartmata, et sõnum õppejõuni ei jõuaks ja seeläbi eksamil eriti karmi kohtlemise osaks ei saanuks? Tudeng Enn jõuab sõpradega arutledes hüpoteesini, et igihaljad tudengid võisid kasutada ðifreeritud sõnumeid ja üheks väga lihtsaks näiteks ðifreerimisest on Caesari ðiffer. Tudeng Enn on motiveeritud programmeerija, kes tahab kirjutada programmi, mis deðifreeriks vanu sõnumeid ning ðifreeriks uusi.
+Kirjutada programm, millel on kaks funktsiooni:
+encode(message, shift) - kodeerib etteantud sõnumi (message) vastavalt etteantud nihkele (shift). Kodeerimisel kasutatakse lihtsat Caesari ðifrit (shift cipher), mis tähendab, et võti (nihe) näitab ära, mitme ühiku võrra on tähestikku edasi nihutatud. Näiteks kui nihe on 1, siis "a" asemel kirjutatakse "b", "b" asemel "c" jne. Kui nihe on kaks, siis "a" asemel "c" jne. Näiteks kui nihe on 2, siis sõne "tere" on kodeeritud kujul "vgtg". Nihe on mitte-negatiivne number. Sõnumis (nii sisend- kui tulemussõnumis) on kasutusel vaid ASCII tähed (nii suured kui väikesed, koodid vahemikes [65; 90] ja [97;122]). Kui nihkega läheks täht üle tähestiku piiri, siis tuleb liikuda uuesti tähestiku algusesse (wrap). Näiteks nihe 1 puhul z => a. Kõik sümbolid, mis ei ole ASCII tähestiku tähed, tuleb jätta kodeeritud sõnumi jaoks muutmata.
+crack(encoded_message, phrase) - proovib dekodeerida etteantud sõnumit (encoded_message) selliselt, et tulemuses esineb etteantud fraas (phrase). Teada on, et kodeerimiseks kasutati sama encode funktsiooni (ehk siis kodeeriti Caesari ðifriga). Kodeeritud sõnumit võib saada mitmel moel "nihutada". Antud funktsiooni puhul tuleks leida selline tulemus, kus sees esineb etteantud fraas (phrase), kusjuures nihe ise peab olema võimalikult väike. Nihet arvestatakse ka selle ülesande puhul vaid mitte-negatiivset. Kui algset sõnumit ei õnnestu vastavalt mainitud tingimustele "nihutada", tuleb tagastada None, muul juhul lahtikodeeritud sõnum.
+Vaata matemaatilist esitust funktsiooni nõuetest
+Tehilised nõuded
+Kogu lahendus peab olema failis EX02.py, mis tuleb panna kataloogi EX02. See tähendab, et fail asub salves kohal EX02/EX02.py
+Kirjutada kaks funktsiooni:
+encode(message,shift)=>encoded_message
+crack(encoded_message,phrase) =>decoded (cracked) message
+Näited:
+encode("tere", 1) => "ufsf"
+encode("TeRe!!", 25) => "SdQd!!"
+encode("ZYyz", 2) => "BAab"
+
+crack("abc", "abc") => "abc" (shift 0)*
+crack("dc", "b") => "cb" (sobiksid encode("ba",2) => "dc" ja encode("cb", 1) => "dc"; viimasel väiksem nihe)
+crack("ab", "c") => "cd" (sobiksid nihe 24 ("cd") ja 25 ("bc"), 24 on väiksem)
+crack("tere", "paulalonpoisipea") => None
+* funktsioon tagastab vaid sõne, sulgudes on täpsustus/kommentaar)
